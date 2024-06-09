@@ -1,0 +1,67 @@
+# Config file for DevChain
+
+Team:
+  max_developpment_iterations : 1 # The maximum number of time the deliverable can loop between developper and devexecutor
+  max_testing_iterations : 1 # The maximum number of time the deliverable can be tested
+  streaming : True # Applies streaming to enhance UX
+  members:
+    Product_owner:
+      memory:
+        memory_bool : False
+        max_memory: 2
+      llm:
+        kind : "Azure_openai" # Azure_openai or Huggingface or Ollama
+        model : 'gpt-4' # gpt-4 or gpt4 with Azure openai / Any repo_id with Huggingface
+        temperature : 0.2
+    Project_manager:
+      memory:
+        memory_bool : False
+        max_memory : 2
+      llm:
+        kind : "Azure_openai"
+        model : "gpt-4"
+        temperature : 0.2
+        
+    Software_architect:
+      memory:
+        memory_bool : False
+        max_memory: 2
+      llm:
+        kind : "Azure_openai" # Azure_openai or Huggingface
+        model : 'gpt-4' # gpt-4 or gpt4 with Azure openai / Any repo_id with Huggingface
+        temperature : 0
+    
+    Tech_lead:
+      memory:
+        memory_bool : False
+        max_memory: 2
+      llm:
+        kind : "Azure_openai" # Azure_openai or Huggingface
+        model : 'gpt-4' # gpt-4 or gpt4 with Azure openai / Any repo_id with Huggingface  
+        temperature : 0.2
+
+    Developer:
+      memory:
+        memory_bool : False
+        max_memory: 2
+      llm:
+        kind : "Azure_openai" # Azure_openai or Huggingface
+        model : 'gpt-4' # gpt-4 or gpt4 with Azure openai / Any repo_id with Huggingface
+        temperature : 0.2
+
+    Senior_developer:
+      memory:
+        memory_bool : False
+        max_memory: 2
+      llm:
+        kind : "Azure_openai" # Azure_openai or Huggingface
+        model : 'gpt-4' # gpt-4 or gpt4 with Azure openai / Any repo_id with Huggingface
+        temperature : 0.2
+    Tester:
+      memory:
+        memory_bool : False
+        max_memory: 2
+      llm:
+        kind : "Azure_openai" # Azure_openai or Huggingface
+        model : 'gpt-4' # gpt-4 or gpt4 with Azure openai / Any repo_id with Huggingface  
+        temperature : 0.2

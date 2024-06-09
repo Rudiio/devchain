@@ -1,0 +1,1 @@
+createdb -h 172.18.0.1 -p 5432 -U postgres langfuse_db

@@ -1,0 +1,132 @@
+{
+    "fixes": [
+        {
+            "id": 1,
+            "file": "input_handler.py",
+            "technology": "Python",
+            "issue": "issue 1",
+            "description": "Inverted movement logic in input handling.",
+            "instructions": "In the `InputHandler` class within `input_handler.py`, locate the `translate_input_to_action` method. Inspect the `key_action_mapping` dictionary to ensure that each key is mapped to the correct movement direction. If any mappings are found to be inverted, correct them to match the expected behavior. For example, if pressing the 'up' arrow key results in the game character moving down, invert this mapping so that the 'up' arrow key correctly corresponds to an upward movement."
+        },
+        {
+            "id": 2,
+            "file": "input_handler.py",
+            "technology": "Python",
+            "issue": "issue 2",
+            "description": "Redundant `perform_move` calls in input handling.",
+            "instructions": "In the `InputHandler` class within `input_handler.py`, locate the `handle_events` method. Remove the call to `perform_move` within this method. Modify the method to return the action determined by the user's input. Then, in `main.py`, adjust the `main_game_loop` function to receive the action returned from `handle_events` and call `perform_move` accordingly. This change ensures that `perform_move` is only called once per valid input, preventing double execution."
+        },
+        {
+            "id": 3,
+            "file": "main.py",
+            "technology": "Python",
+            "issue": "issue 3",
+            "description": "Unhandled `KeyboardInterrupt` exception.",
+            "instructions": "In `main.py`, wrap the `main_game_loop` call within the `if __name__ == '__main__':` block with a try-except block. Catch the `KeyboardInterrupt` exception and call `pygame.quit()` to ensure the game exits gracefully. After calling `pygame.quit()`, use `sys.exit()` to terminate the program."
+        },
+        {
+            "id": 4,
+            "file": "ui_manager.py",
+            "technology": "Python, pygame",
+            "issue": "issue 4",
+            "description": "`show_message` method blocks game loop.",
+            "instructions": "In the `UIManager` class within `ui_manager.py`, locate the `show_message` method. Remove the `pygame.time.wait(2000)` call. Instead, implement a non-blocking approach that allows the message to be displayed for 2 seconds while still processing input events. This can be achieved by setting a timer within the main game loop that checks the elapsed time since the message was displayed and continues to process other events."
+        },
+        {
+            "id": 5,
+            "file": "main.py",
+            "technology": "Python",
+            "issue": "issue 5",
+            "description": "Unnecessary `update_ui` calls.",
+            "instructions": "In `main.py`, ensure that the `update_ui` method is called only once per frame within the `main_game_loop`. Remove any redundant calls to `update_ui` from the `handle_events` method in `input_handler.py` or any other locations where it may be called more than once per frame."
+        },
+        {
+            "id": 6,
+            "file": "main.py",
+            "technology": "Python",
+            "issue": "issue 6",
+            "description": "Score not reset on game restart.",
+            "instructions": "In the `initialize_game` function within `main.py`, add a call to `score_manager.reset_score()` to reset the score to zero. This ensures that each new game starts with a score of zero, providing a consistent starting point for the player."
+        },
+        {
+            "id": 7,
+            "file": "ui_manager.py",
+            "technology": "Python, pygame",
+            "issue": "issue 7",
+            "description": "Redundant `pygame.init()` call.",
+            "instructions": "In the `UIManager` class within `ui_manager.py`, locate the `init_pygame` method. Remove the `pygame.init()` call from this method since `pygame` is already initialized in `main.py`. This avoids redundant initialization and potential conflicts."
+        },
+        {
+            "id": 8,
+            "file": "main.py",
+            "technology": "Python",
+            "issue": "issue 8",
+            "description": "Incorrect handling of 'continue' action.",
+            "instructions": "In the `main_game_loop` function within `main.py`, locate and remove the `elif action == 'continue' and state == 'won':` block. This block is unnecessary as the 'continue' action does not require separate handling in the game loop."
+        },
+        {
+            "id": 9,
+            "file": "input_handler.py",
+            "technology": "Python",
+            "issue": "issue 9",
+            "description": "Remove redundant UI update call after a valid move.",
+            "instructions": "Locate the `handle_events` method in the `InputHandler` class within `input_handler.py`. Identify the line where `self.ui_manager.update_ui()` is called and remove it. Verify that the UI updates are being handled exclusively by the `main_game_loop` function in `main.py` to ensure the UI is not updated multiple times within the same frame."
+        },
+        {
+            "id": 10,
+            "file": "input_handler.py",
+            "technology": "Python",
+            "issue": "issue 10",
+            "description": "Correct the key-action mapping for coherent user movement.",
+            "instructions": "In the `InputHandler` class within `input_handler.py`, find the `translate_input_to_action` method. Review the `key_action_mapping` dictionary to ensure that the keys `K_UP`, `K_DOWN`, `K_LEFT`, and `K_RIGHT` are mapped to the actions 'up', 'down', 'left', and 'right' respectively. If any mappings are incorrect, update them accordingly. Test the input handling after changes to confirm that the movement on screen matches the user's input."
+        },
+        {
+            "id": 11,
+            "file": "input_handler.py",
+            "technology": "Python",
+            "issue": "issue 11",
+            "description": "Remove unnecessary 'continue' action handling.",
+            "instructions": "Open the `input_handler.py` file and navigate to the `handle_events` method within the `InputHandler` class. Locate the `elif action == 'continue':` block and remove it entirely. Ensure that the removal of this block does not affect the game's ability to process other actions. Run the game to confirm that all actions are still handled correctly and that the removal of the 'continue' action does not introduce any new issues."
+        },
+        {
+            "id": 1,
+            "file": "game_logic.py",
+            "technology": "Python",
+            "issue": "issue 1",
+            "description": "Direct board array access in `can_merge_or_move`",
+            "instructions": "Within the `can_merge_or_move` method, locate any instances of `board.get_tile(x, y)` and replace them with `board.board[x][y]` to directly access the board array elements. This change will optimize the method by removing the unnecessary function call overhead."
+        },
+        {
+            "id": 2,
+            "file": "game_logic.py",
+            "technology": "Python",
+            "issue": "issue 2",
+            "description": "Handle no-merge move in `perform_move`",
+            "instructions": "In the `perform_move` method, add a conditional check to verify if `score_gained` is greater than 0 before spawning a new tile with `self.spawn_tile()`. This ensures that a new tile is only added to the board when a merge has occurred, which is the intended behavior."
+        },
+        {
+            "id": 3,
+            "file": "game_logic.py",
+            "technology": "Python",
+            "issue": "issue 3",
+            "description": "Correct `check_game_over` method call",
+            "instructions": "Update the `check_game_over` method by changing the argument passed to `can_merge_or_move`. Instead of passing the `GameBoard` object, pass `self.game_board.board`, which is the actual board array that the method expects to receive."
+        },
+        {
+            "id": 4,
+            "file": "input_handler.py",
+            "technology": "Python, pygame",
+            "issue": "issue 4",
+            "description": "Fix key-action mapping in `translate_input_to_action`",
+            "instructions": "Review the key-action mappings in the `translate_input_to_action` method. Ensure that each key press corresponds to the correct movement direction. If any mappings are found to be incorrect, update them to match the expected behavior as reported by user feedback."
+        },
+        {
+            "id": 5,
+            "file": "game_logic.py",
+            "technology": "Python",
+            "issue": "issue 5",
+            "description": "Remove unnecessary validation in `spawn_tile`",
+            "instructions": "Locate the validation check within the `spawn_tile` method that raises a `ValueError` and remove it. This check is redundant as the `set_tile` method is already responsible for ensuring the correct value is set. Eliminating this check will prevent interruptions in the game flow due to unnecessary exceptions."
+        }
+    ]
+}
