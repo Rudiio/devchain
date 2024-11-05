@@ -1,0 +1,51 @@
+/* styles.css */
+
+/* Apply the 'display-area-style' to the display screen */
+.display-screen {
+    /* Add your CSS properties for the display screen here */
+    /* Example properties (you should customize these) */
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: 2em;
+    padding: 10px;
+    text-align: right;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    min-height: 50px;
+}
+
+/* Assign the 'button-style' to all calculator buttons */
+.button-style {
+    /* Add your CSS properties for the buttons here */
+    /* Example properties (you should customize these) */
+    background-color: #e7e7e7;
+    color: #333;
+    border: none;
+    padding: 15px 30px;
+    margin: 5px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Use the 'layout-style' to position the display and buttons */
+.layout-style {
+    /* Add your CSS properties for the layout here */
+    /* Example properties (you should customize these) */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 400px;
+    margin: auto;
+}
+
+/* Add styles for button press effect */
+.button-style:active {
+    /* Add your CSS properties for the active state of buttons here */
+    background-color: #d7d7d7;
+}
+
+/* Add styles for button during operation */
+.button-operation-active {
+    /* Add your CSS properties for the operation-active state of buttons here */
+    background-color: #ffdf00;
+}

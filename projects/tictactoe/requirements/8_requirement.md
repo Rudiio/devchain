@@ -1,0 +1,1 @@
+The game should have a clear and concise README file with instructions on how to run and play the game.

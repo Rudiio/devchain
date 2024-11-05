@@ -1,0 +1,1 @@
+{"tasks": [{"id": 10, "file": "game_app.py", "technology": "Python", "description": "Implement game over logic", "instructions": "In the `GameApp` class, implement the `end_game` method to display the 'Game Over' message and handle game termination when the snake collides with the walls or itself.", "needed": "Snake.check_collision()"}]}

@@ -1,0 +1,1 @@
+The application should include a help section or tutorial that explains the rules of the game and how to use the application.

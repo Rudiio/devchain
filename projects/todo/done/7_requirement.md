@@ -1,0 +1,1 @@
+The user interface of the application must be styled using TailwindCSS to ensure a modern and responsive design.

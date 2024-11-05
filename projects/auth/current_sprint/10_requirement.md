@@ -1,0 +1,1 @@
+The application should include a user guide or help section that explains how to use the various features and troubleshoot common issues.

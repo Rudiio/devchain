@@ -1,0 +1,1 @@
+The game should be thoroughly tested on various browsers and devices to ensure compatibility and a consistent user experience.

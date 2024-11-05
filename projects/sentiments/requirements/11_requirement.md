@@ -1,0 +1,1 @@
+The application should be thoroughly tested to ensure it works as expected across different web browsers and is responsive to different screen sizes.

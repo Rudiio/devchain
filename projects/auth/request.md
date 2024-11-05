@@ -1,0 +1,1 @@
+Strong authentication via userid password. Use python with flask.

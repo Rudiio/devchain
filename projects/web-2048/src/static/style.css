@@ -1,0 +1,128 @@
+/* Main game board styles */
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #bbada0;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Tile styles */
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #cdc1b4; /* Default tile color */
+  font-size: 24px;
+  font-weight: bold;
+  color: #776e65;
+  border-radius: 5px;
+  user-select: none;
+}
+
+/* Tile specific background colors */
+.tile-2 { background-color: #eee4da; }
+.tile-4 { background-color: #ede0c8; }
+.tile-8 { background-color: #f2b179; }
+.tile-16 { background-color: #f59563; }
+.tile-32 { background-color: #f67c5f; }
+.tile-64 { background-color: #f65e3b; }
+.tile-128 { background-color: #edcf72; }
+.tile-256 { background-color: #edcc61; }
+.tile-512 { background-color: #edc850; }
+.tile-1024 { background-color: #edc53f; }
+.tile-2048 { background-color: #edc22e; }
+/* Add further tile colors if needed */
+
+/* Ensure tiles maintain a square aspect ratio */
+.tile::before {
+  content: '';
+  float: left;
+  padding-top: 100%;
+}
+
+/* Score container and new game button styles */
+.score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.score-header {
+  font-size: 18px;
+  color: #776e65;
+}
+
+.score-display {
+  background-color: #bbada0;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 24px;
+  color: white;
+  min-width: 100px;
+  text-align: center;
+}
+
+#new-game {
+  background-color: #8f7a66;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+}
+
+#new-game:hover {
+  background-color: #9f8b76;
+}
+
+/* Responsive design with media queries */
+@media (max-width: 600px) {
+  .game-board {
+    max-width: 90%;
+    grid-gap: 5px;
+  }
+
+  .tile {
+    font-size: 18px;
+  }
+
+  .score-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .score-header,
+  .score-display {
+    font-size: 20px;
+  }
+
+  #new-game {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .tile {
+    font-size: 14px;
+  }
+
+  .score-header,
+  .score-display {
+    font-size: 18px;
+  }
+
+  #new-game {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}

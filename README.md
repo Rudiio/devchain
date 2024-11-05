@@ -2,14 +2,13 @@
 
 <img src="./ressources/Devchain_logo.svg" alt="log" align="center">
 
-🧑‍💻⛓️ DevChain
-==============================
+# 🧑‍💻⛓️ DevChain
 
 🚀 Use LLM to prototype, build and understand the creation of your applications 🚀
 
 </div>
 
-## 🔥 What ? 
+## 🔥 What ?
 
 **DevChain** is an AI powered application that helps you build software by providing code. It relies on a multi-agent system to simulate the developpment life cycle, following more or less the Scrumban methodology. It is built on top of the [Langchain](https://www.langchain.com/) framework. Each agent of the system will be powered and simulated by a Large Language Model (LLM).
 
@@ -24,13 +23,10 @@ It was generated with only **gpt-4**.
 
 https://github.com/mantucorp/devchain/assets/92988093/142825f5-866f-499b-b929-9963e5403435
 
-
 **Initial prompt** : Snake game in python using pygame. The game should feature a green snake with a red food. Divide the screen into a grid and consider that one cell is the size of a segment of the snake and the size of a food. (up to date)
 It was generated with only **gpt-4**.
 
 https://github.com/mantucorp/devchain/assets/92988093/bed6c5f9-2198-417c-905e-4ad3e332cfb6
-
-
 
 <!-- Create a simple web application using python that generates random quotes and renders them in cards on the window. It needs to use Flask for the backend and HTML and Tailwind CSS for the front-end. Keep it very simple but put an emphasize on the appearance of the web app. The UI should be inspired by the apple.com UI design.
 
@@ -38,7 +34,7 @@ Simple pong game in python using pygame. The game should include an AI that will
 
 Tic tac toe web application in python. The front-end should use HTML, Tailwind(CSS) and the back-end shoukd use python and flask. Keept the application simple. The tic-tac-toe game should come with a user-friendly web interface, allowing two players to take turns and determining the winner.
 
-A web application to compare the star histories of two githug repositories. The application plots the star histories of the two repos. The application should be implemented in python with flask. Use Tailwind to style the front-end of the application. The plot should be created on the frontend of the application with a javascript library. 
+A web application to compare the star histories of two githug repositories. The application plots the star histories of the two repos. The application should be implemented in python with flask. Use Tailwind to style the front-end of the application. The plot should be created on the frontend of the application with a javascript library.
 
 A Sentiment analysis web application. It should take as input some text from the user and output if the input is negative, positive or neutral with the corresponding percentage. The backend should use python and fastapi to create a REST API. The app should include an endpoint to analyze the sentiment of a text via Roberta model used directly via huggingface/transformers. The application should include an app.py file that directly starts the FastAPI app via uvicorn. The backend should serve/render directly the front-end application built with Html, javascript and styled with tailwindcss. The UI should have a similar style as the UI from ChatGPT. The title of the application should be styled in big at the top-center, the text area should be in the bottom center and the results should appear dynamically in the center of the window.
 
@@ -50,6 +46,7 @@ Design and develop a login and registration page using Bootstrap included via CD
 
 **Devchain** simulating a whole development team in the background. Each agent is powered by the LLM of your choice.
 At the moment, a team follow a simple process :
+
 1. The **user** sends an application request.
 2. The **Product owner** writes the backlog of that application : user stories + requirements.
 3. The **user** selects the ones he wants to keep.
@@ -60,67 +57,71 @@ At the moment, a team follow a simple process :
 8. The **Tester** design the testscases.(optional)
 9. The **Tech lead** plans test writting session.(optional)
 10. The **Tester** writes the test by follow the tasks from the test plan.(optional)
-8. The **Senior Developer** starts his own workflow:
-    -   He runs the code
-    -   He runs the tests
-    -   He asks for a feedback
-    -   Selects the files to review (code and tests)
-    -   He reviews the files and give a list of fixes
-    -   He adjust the fixes.
+11. The **Senior Developer** starts his own workflow:
 
-9. The **Developer** corrects the code.
-10. The **tester** corrects the tests.(optional)
+    - He runs the code
+    - He runs the tests
+    - He asks for a feedback
+    - Selects the files to review (code and tests)
+    - He reviews the files and give a list of fixes
+    - He adjust the fixes.
+
+12. The **Developer** corrects the code.
+13. The **tester** corrects the tests.(optional)
 
 ## Features
 
 ### 🎮 Control over the process
 
 The idea behin that application is to help the developer, not to replace him, so the developer has the control over the whole process.
-**Devchain** let you *in control* of the whole process by involving you in the process and by allowing you to modify the produced documents. That complements the LLMs lack of sense and guide them toward the development.
+**Devchain** let you _in control_ of the whole process by involving you in the process and by allowing you to modify the produced documents. That complements the LLMs lack of sense and guide them toward the development.
 
-**Devchain** give you the possibility *to select* the LLMs that you need for your system. This allows the possibility to connect differenct models with each one having its specialization.
+**Devchain** give you the possibility _to select_ the LLMs that you need for your system. This allows the possibility to connect differenct models with each one having its specialization.
 You also have control over the number of iterations of the system.
 
-**Devchain** provides with the *code*, a lot of *documentation* that helps building the app but especially help the user to have a deep understanding of the functioning of the application.
+**Devchain** provides with the _code_, a lot of _documentation_ that helps building the app but especially help the user to have a deep understanding of the functioning of the application.
 This include the global information about the project and the architecture of the application. The goal is to encourage the developer to debug the code and understand the idea behind it to code it itself.
 
 ### 🤖 LLM freedom of reasoning
 
-The idea of **Devchain** is to let the LLMs design and code freely and so provide a great base to developers. This freedom allows the AI to code as *natural* as possible, like a real developer would do. This also allow the LLMs to fully exploit the data that it acquired during its training. The application only guides the AI through the process by indicating the tasks, but the AI decides on everything thanks to its reasoning capabilities. This includes the entire design of the application, the code implementation, the code context or even the debugging. The Human is here to understand and exploit the ideas from the AI for his own project and to help it to go as far as possible. 
+The idea of **Devchain** is to let the LLMs design and code freely and so provide a great base to developers. This freedom allows the AI to code as _natural_ as possible, like a real developer would do. This also allow the LLMs to fully exploit the data that it acquired during its training. The application only guides the AI through the process by indicating the tasks, but the AI decides on everything thanks to its reasoning capabilities. This includes the entire design of the application, the code implementation, the code context or even the debugging. The Human is here to understand and exploit the ideas from the AI for his own project and to help it to go as far as possible.
 
 ### 🧪 Test workflow
 
-An idea that came out when creating the app was to *automate* the debugging process by directly incorporating the tests in the Senior dev workflow. The goal was to allow the AI to have a deeper understanding of the state of the application by running the tests. On the paper, that idea seemed to be a good idea, but in practice it was not. The testing workflow was quite similar to the development one : the tester designs the testcases, the tech lead plans the test writting.
+An idea that came out when creating the app was to _automate_ the debugging process by directly incorporating the tests in the Senior dev workflow. The goal was to allow the AI to have a deeper understanding of the state of the application by running the tests. On the paper, that idea seemed to be a good idea, but in practice it was not. The testing workflow was quite similar to the development one : the tester designs the testcases, the tech lead plans the test writting.
 The big problem with incorporating the test workflow is that it obviously **multiply the problem by 2** : 2 times more code to debug, with one being already complicated.
 So the workflow is accessible as optional, but it can be interesting to have a good starting points.
 
 ### ⛏️ Code selection and extraction
 
-To enhance the code generation, we implemented a *Code selection and extraction* component, it's called the CodeContextRetriever. The idea is simple : the LLM chooses the code that is needed for a specific task or fix and the retriever directly extract it from the codebase. The Selection relies on the LLM reasoning capacities to ask for the right code in the right format : **file::class::function** (the class and function level can be removed depending on the LLM choice). This allows to reduce the tokens consumption and optimize the result.
+To enhance the code generation, we implemented a _Code selection and extraction_ component, it's called the CodeContextRetriever. The idea is simple : the LLM chooses the code that is needed for a specific task or fix and the retriever directly extract it from the codebase. The Selection relies on the LLM reasoning capacities to ask for the right code in the right format : **file::class::function** (the class and function level can be removed depending on the LLM choice). This allows to reduce the tokens consumption and optimize the result.
 The CodeContextRetriever build the ast of the code to extract the precise code bodies and associate them with the right keywords. At the moment, the system supports python and Javascript at the function level and any other language at the file level.
 
-## 🔨 Install 
+## 🔨 Install
 
 Working on **python 3.11.7** and **Ubuntu 22**.
 
 Install dependecies :
+
 ```sh
 pip install -r requirements.txt
 ```
 
-To run the application you need to add a .env file in the repository folder. 
+To run the application you need to add a .env file in the repository folder.
 It should contain :
+
 - the Azure Openai variables if you plan to use Azure Openai,
 - Hugging face vaariables, if chosen
 - Langchain API support if wanting to use with Langsmith
 
 **example:**
+
 ```sh
-# Hugging face 
+# Hugging face
 HUGGINGFACEHUB_API_TOKEN="************************************"
 TAVILY_API_KEY="********************************"
 
-# Azure Openai 
+# Azure Openai
 OPENAI_API_TYPE='azure'
 OPENAI_API_VERSION='2023-07-01-preview'
 OPENAI_API_KEY='****************************************'
@@ -140,6 +141,7 @@ LANGCHAIN_ENDPOINT='https://api.smith.langchain.com'
 You can modify directly the parameters of the application directly from the [config.yaml file](./config/config.yaml).
 
 Command:
+
 ```sh
 python3 main.py
 ```
@@ -156,7 +158,7 @@ flowchart TD
     userB["User"] -.-> |Choose the US and requirements|backlog
 
     %% Product manager
-    backlog ==> PM["Project manager"] 
+    backlog ==> PM["Project manager"]
     PM ==> |Writes| summary("project summary")
 
     %% Architecture
@@ -169,9 +171,9 @@ flowchart TD
     Tester -.-> |Designs| testcases("Testcases")
     testcases -.-> TL2["Tech lead"]
     TL2 -.-> |Plan the test session| test_plan("Test plan")
-    
 
-    %% tech lead 
+
+    %% tech lead
     Architecture ==> TL["Tech lead"]
     TL ==> |Plans code session| code_plan("Code plan")
 
@@ -188,12 +190,58 @@ flowchart TD
     tests -.-> Seniordev
     User3["User"] -.-> |Gives feedback| Seniordev
     Seniordev --> |End| PO2["Product Owner"]
-    
+
     %% Loop
     Seniordev -.-> |To fix tests| Tester2
     Seniordev ==> |To fix code |Developer
 ```
 
+```mermaid
+flowchart TD
+    userA["Utilisateur"] ==> demande("demande")
+    demande ==> PO["Product Owner"]
+
+    %% Backlog
+    PO ==> |Produit| backlog("backlog")
+    userB["Utilisateur"] -.-> |Choisit les User Stories et exigences|backlog
+
+    %% Product manager
+    backlog ==> PM["Chef de projet"]
+    PM ==> |Écrit| résumé("Résumé du projet") ==> SA
+
+    %% Architecture
+    backlog ==> SA["Architecte logiciel"]
+    SA ==> |Détermine| Architecture("Architecture logicielle")
+    userC["Utilisateur"] -.-> |Peut modifier la conception et l'architecture| Architecture
+
+    %% Testeur
+    Architecture -.-> Testeur["Testeur"]
+    Testeur -.-> |Conçoit| Testcase("Testcases")
+    Testcase -.-> TL2["Tech lead"]
+    TL2 -.-> |Planifie la session de test| plan_test("Plan de test")
+
+
+    %% Tech lead
+    Architecture ==> TL["Tech lead"]
+    TL ==> |Planifie la session de code| plan_code("Plan de code")
+
+    %% Dev
+    plan_code ==> Développeur["Développeur"]
+    Développeur ==> |Écrit| code("Code")
+
+    %% Testeur codes
+    plan_test -.-> Testeur2["Testeur"]
+    Testeur2 -.-> |Écrit| tests("Tests")
+
+    %% Senior dev
+    code ==> DéveloppeurSenior["Développeur Senior"]
+    tests -.-> DéveloppeurSenior
+    Utilisateur3["Utilisateur"] -.-> |Donne des retours| DéveloppeurSenior
+    DéveloppeurSenior --> |Fin| PO2["Product Owner"]
+
+    %% Boucle
+    DéveloppeurSenior -.-> |Corrige les tests| Testeur2
+    DéveloppeurSenior ==> |Corrige le code| Développeur
+```
+
 If you want to know more about the application architecture check [here](./ressources/Architecture.md)
-
-

@@ -1,0 +1,1 @@
+The game's design should be responsive, ensuring that it is displayed correctly on screens of different sizes.

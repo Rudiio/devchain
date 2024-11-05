@@ -149,26 +149,127 @@ classDiagram
     } 
 ```
 
-## First version developpment planning
 
 ```mermaid
-gantt
-    title First version developpment Gantt
-    dateFormat YYYY-MM-DD
-    section Agents developpment 
-        Agent class :a1, 2024-02-19, 7d
-        Product Owner:a2, 2024-02-19, 7d
-        Developper:a3, after a2, 7d
-        Tester:a4, after a3, 7d
+classDiagram
 
-    section Interface developpment
-        Project stack and setup: I1, 2024-02-15,4d
-        Team orchestration: I2, 2024-02-19, 7d
-        Communication interface: I3, after I2, 7d
+    class CodeContextRetriever {
+        +dict file_store
+        +dict classes_store
+        +parse_files()
+        +extract_python()
+        +extract_IHQ()
+        +dump()
+    }
+
+    class Agent {
+        +str role
+        +str tasks
+        +str team_description
+        +str team_goal
+        +int max_iterations
+        +Message working_message
+        +LCRunnablesequence _agent
+        +LCLllm llm
+
+        +initialize_agent()
+        +execute()
+        +decide_and_act()
+        +receive_message()
+    }
+
+    class ProductOwner {
+        +int max_sprints
+
+        +write_backlog()
+        +review()
+    }
+
+    class ProjectManager {
+        +plan_sprint()
+        +wait_modification()
+    }
+
+    class SoftwareArchitect {
+        +write_architecture_design()
+    }
+
+    class TechLead {
+        +plan_code_writting()
+    }
+
+    class Developer {
+        +select_code_context()
+        +code_writting_session()
+        +code_refining_session()
+    }
+
+    class SeniorDeveloper{
+    review()
+    +review_code()
+    +review_tests()
+    +select_file_to_review()
+    +select_review_context()
+    +review_fixes()
+    +run_code()
+    +run_tests()
+    +ask_user_feedback()
+    }
+
+    class Tester {
+        +write_tests()
+        +run_tests
+        }
+
+    ProductOwner <|-- Agent
+    ProjectManager <|-- Agent
+    SoftwareArchitect <|-- Agent
+    TechLead <|-- Agent
+    Developer <|-- Agent
+    Tester <|-- Agent
+    SeniorDeveloper <|-- Agent
+
+
+    class Team{
+        +Dict members
+
+        +setup()
+        +run_sprints(str user_query)
+        +end_sprint()
+    }
     
-    section Testing phase
-        Tests: T1, after a3, 7d
+    Team "1" --> "1" CommunicationChannel
+    class CommunicationChannel{
+        +list message
+        +dict deliverables
+
+        +handle_deliverable()
+        +receive_message()
+        +retrieve_message()
+        
+    }
+
+    CommunicationChannel "1" --> "1..*" Message
+    class Message{
+        +str object
+        +str target_agent
+        +str origin_agent
+        +dict content
+    }
+
     
-    section Deployment
-        Deployment: D1, after T1,7d
+
+    
+    Team "1" --> "1" ProductOwner
+    Team "1" --> "1" SoftwareArchitect
+    Team "1" --> "1" Developer
+    Team "1" --> "1" SeniorDeveloper
+    Team "1" --> "1" ProjectManager
+    Team "1" --> "1" Tester
+
+    Developer "1" --> "1" CodeContextRetriever
+    Tester "1" --> "1" CodeContextRetriever
+    SeniorDeveloper "1" --> "1" CodeContextRetriever
+    
+    
 ```

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <!-- Corrected the href attribute to ensure the styles.css file is correctly linked -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="registration-form">
+        <!-- Display error messages if any -->
+        {% if error_message %}
+            <div class="error-message">{{ error_message }}</div>
+        {% endif %}
+        <!-- Registration form with action pointing to the register route -->
+        <form action="{{ url_for('register') }}" method="post">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required class="form-input">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="form-button">Register</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+/* TailwindCSS CDN (Add this line to the head section of your `/static/index.html`) */
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+
+/* Title Styling */
+h1 {
+  @apply text-4xl md:text-5xl lg:text-6xl text-center font-bold my-8;
+}
+
+/* Text Area Styling */
+textarea {
+  @apply w-full h-40 p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors;
+}
+
+/* Submit Button Styling */
+button {
+  @apply px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 transition-colors;
+}
+
+/* Dynamic Display Area Styling */
+#result {
+  @apply p-4 border-2 border-gray-300 rounded-lg mt-4;
+}
+
+/* Positive Sentiment Styling */
+.positive {
+  @apply bg-green-100 border-green-500 text-green-700;
+}
+
+/* Negative Sentiment Styling */
+.negative {
+  @apply bg-red-100 border-red-500 text-red-700;
+}
+
+/* Neutral Sentiment Styling */
+.neutral {
+  @apply bg-yellow-100 border-yellow-500 text-yellow-700;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  textarea {
+    @apply h-60;
+  }
+}

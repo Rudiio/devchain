@@ -1,0 +1,1 @@
+The game should have a title screen with options to start a new game, access settings, and view the scoreboard.

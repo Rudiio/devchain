@@ -1,0 +1,61 @@
+@import 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css';
+
+#task-list {
+  /* Responsive container for tasks with a subtle shadow and padding */
+  @apply container mx-auto my-8 p-6 bg-white rounded-lg shadow-md max-w-2xl;
+}
+
+#task-list .task-item {
+  /* Style for individual task items with hover effect */
+  @apply flex justify-between items-center p-4 border-b border-gray-200 hover:bg-gray-50;
+}
+
+#task-list .task-item:last-child {
+  /* Remove border from the last task item */
+  @apply border-b-0;
+}
+
+#task-list .task-item .status-indicator {
+  /* Style for the status indicator */
+  @apply h-3 w-3 rounded-full;
+}
+
+#task-list .task-item .status-indicator.pending {
+  /* Pending status color */
+  @apply bg-yellow-400;
+}
+
+#task-list .task-item .status-indicator.completed {
+  /* Completed status color */
+  @apply bg-green-500;
+}
+
+#task-list .task-item button {
+  /* Style for buttons within task items */
+  @apply text-sm py-1 px-3 rounded text-white focus:outline-none;
+}
+
+#task-list .task-item button.change-status {
+  /* Change status button color */
+  @apply bg-blue-500 hover:bg-blue-600;
+}
+
+#task-list .task-item button.delete-task {
+  /* Delete task button color */
+  @apply bg-red-500 hover:bg-red-600 ml-2;
+}
+
+#task-form {
+  /* Style for the form to add new tasks */
+  @apply flex justify-between items-center mx-auto my-4 p-4 bg-white rounded-lg shadow-md max-w-2xl;
+}
+
+#task-form #task-input {
+  /* Style for the input field */
+  @apply flex-1 p-2 mr-4 border rounded border-gray-300 focus:outline-none focus:border-blue-500;
+}
+
+#task-form button {
+  /* Style for the submit button */
+  @apply bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded focus:outline-none;
+}

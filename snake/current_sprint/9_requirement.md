@@ -1,0 +1,1 @@
+The game should be designed to run on standard desktop environments with Python and Pygame installed.

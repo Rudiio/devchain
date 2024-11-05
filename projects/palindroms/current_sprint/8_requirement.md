@@ -1,0 +1,1 @@
+The program should be optimized for performance to handle large strings efficiently.

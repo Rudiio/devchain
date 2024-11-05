@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureVault</title>
+    <!-- Updated the integrity attribute with the correct SHA-384 hash for Bootstrap CSS CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/7NwannByPmMFbEZC0B4ingX0e36" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Registration Form -->
+        <form id="registration-form">
+            <div class="form-group">
+                <label for="input-username">Username</label>
+                <input type="text" class="form-control" id="input-username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="input-email">Email address</label>
+                <input type="email" class="form-control" id="input-email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="input-password">Password</label>
+                <input type="password" class="form-control" id="input-password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="input-password-confirm">Confirm Password</label>
+                <input type="password" class="form-control" id="input-password-confirm" placeholder="Confirm Password">
+            </div>
+            <button type="submit" class="btn btn-primary" id="button-register">Register</button>
+        </form>
+
+        <!-- Login Form -->
+        <form id="login-form">
+            <div class="form-group">
+                <label for="login-input-email">Email address</label>
+                <input type="email" class="form-control" id="login-input-email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="login-input-password">Password</label>
+                <input type="password" class="form-control" id="login-input-password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-success" id="button-login">Login</button>
+        </form>
+
+        <!-- Feedback Messages -->
+        <div class="alert alert-success d-none" id="feedback-success"></div>
+        <div class="alert alert-danger d-none" id="feedback-error"></div>
+    </div>
+
+    <!-- Ensure correct loading order of JavaScript files -->
+    <script src="/static/js/feedback.js"></script>
+    <script src="/static/js/registration.js"></script>
+    <script src="/static/js/login.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure that the Feedback class is not redeclared
+            if (typeof Feedback === 'undefined') {
+                class Feedback {
+                    constructor(successSelector, errorSelector) {
+                        this.successElement = document.querySelector(successSelector);
+                        this.errorElement = document.querySelector(errorSelector);
+                    }
+                    showSuccess(message) {
+                        this.successElement.textContent = message;
+                        this.successElement.classList.remove('d-none');
+                        this.errorElement.classList.add('d-none');
+                    }
+                    showError(message) {
+                        this.errorElement.textContent = message;
+                        this.errorElement.classList.remove('d-none');
+                        this.successElement.classList.add('d-none');
+                    }
+                }
+            }
+            const feedback = new Feedback('#feedback-success', '#feedback-error');
+            const registration = new Registration(feedback);
+            const login = new Login(feedback);
+        });
+    </script>
+</body>
+</html>

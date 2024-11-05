@@ -1,0 +1,1 @@
+The application should be packaged in a way that it can be easily installed and run on any operating system that supports Python.

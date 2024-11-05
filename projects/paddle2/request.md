@@ -1,0 +1,1 @@
+Simple pong game in python using pygame. The game should include an AI that will be the opponent of the player. Use the default font of pygame for any text oriented task.

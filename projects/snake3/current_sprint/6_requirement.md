@@ -1,0 +1,1 @@
+The game should have sound effects for actions such as eating the food and ending the game.

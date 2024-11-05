@@ -1,0 +1,1 @@
+The application should be tested across different web browsers to ensure compatibility and responsiveness.

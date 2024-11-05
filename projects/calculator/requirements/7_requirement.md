@@ -1,0 +1,1 @@
+The application should be tested for cross-browser compatibility to ensure it works on the most commonly used web browsers.

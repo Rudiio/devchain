@@ -1,0 +1,1 @@
+The application must be designed with a modern and attractive user interface, using a consistent color scheme and typography.

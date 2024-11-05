@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeTrendz</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to CodeTrendz</h1>
+        <form id="search-form">
+            <div class="form-group">
+                <input type="text" class="form-control" id="repository-name" placeholder="Enter GitHub repository name" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        <div id="stats-placeholder">
+            <!-- Placeholders for repository statistics will be updated by main.js -->
+            <p>Stars: <span id="stars">-</span></p>
+            <p>Forks: <span id="forks">-</span></p>
+            <p>Watchers: <span id="watchers">-</span></p>
+            <p>Open Issues: <span id="open-issues">-</span></p>
+        </div>
+    </div>
+    <!-- Custom Scripts -->
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+{
+    "fixes": [
+        {
+            "id": 1,
+            "file": "/static/js/login.js",
+            "technology": "JavaScript",
+            "issue": "issue 1",
+            "description": "Remove duplicate Feedback class declaration",
+            "instructions": "Locate the `Feedback` class declaration in `/static/js/login.js`. Remove the entire class declaration, ensuring that no other code is affected. Save the file and verify that the `Login` class still functions correctly by running the application and checking for any console errors related to `Feedback`."
+        },
+        {
+            "id": 2,
+            "file": "/static/js/login.js",
+            "technology": "JavaScript",
+            "issue": "issue 2",
+            "description": "Refactor Login class to accept feedback parameter",
+            "instructions": "In `/static/js/login.js`, update the `Login` class constructor to accept a single parameter named `feedback`. Inside the constructor, assign this parameter to a property of the `Login` class, for example, `this.feedback = feedback;`. Ensure that all instances within the `Login` class where a new `Feedback` object was instantiated are now using the `this.feedback` property."
+        },
+        {
+            "id": 3,
+            "file": "/templates/index.html",
+            "technology": "HTML, JavaScript",
+            "issue": "issue 2",
+            "description": "Update Login class instantiation with feedback instance",
+            "instructions": "In `/templates/index.html`, locate the script where the `Login` class is instantiated. Modify the instantiation to pass the `feedback` instance as an argument. For example, if the instantiation was `new Login()`, change it to `new Login(feedback)`, assuming `feedback` is the variable holding the `Feedback` instance."
+        },
+        {
+            "id": 4,
+            "file": "/app.py",
+            "technology": "Python, Flask",
+            "issue": "issue 3",
+            "description": "Align Flask route with the expected window.location.href",
+            "instructions": "In `/app.py`, locate the Flask route that should serve the `welcome.html` page. If the route is not `/welcome`, update it to `@app.route('/welcome')`. Ensure that the function associated with this route returns `render_template('welcome.html')`. Test the application to ensure that the redirection to `/welcome` after login successfully loads `welcome.html`."
+        },
+        {
+            "id": 5,
+            "file": "/templates/index.html",
+            "technology": "HTML",
+            "issue": "issue 4",
+            "description": "Replace Bootstrap CSS CDN integrity hash",
+            "instructions": "In `/templates/index.html`, find the link element for the Bootstrap CSS CDN. Replace the placeholder `<INSERT_CORRECT_SHA384_HASH_HERE>` within the `integrity` attribute with the actual SHA-384 hash value for the Bootstrap CSS version you are using. You can obtain the correct hash from the official Bootstrap CDN or documentation."
+        },
+        {
+            "id": 6,
+            "file": "/templates/index.html",
+            "technology": "HTML, JavaScript",
+            "issue": "issue 5",
+            "description": "Ensure correct loading order of JavaScript files",
+            "instructions": "In `/templates/index.html`, check the order in which `feedback.js` and `login.js` are included. Make sure that `feedback.js` is included before `login.js`. If any changes are made, test the application to confirm that the `Login` class is defined and no errors are present in the console."
+        }
+    ]
+}

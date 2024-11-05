@@ -1,0 +1,1 @@
+The game should have a sound effect when the snake eats the food and a different sound effect when the game ends.

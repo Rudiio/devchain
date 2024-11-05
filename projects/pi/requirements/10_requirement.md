@@ -1,0 +1,1 @@
+The application should be designed to be scalable, allowing for future addition of more Pi estimation algorithms or features.

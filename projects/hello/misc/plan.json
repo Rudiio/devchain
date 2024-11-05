@@ -1,0 +1,53 @@
+{
+    "tasks": [
+        {
+            "id": 1,
+            "file": "/config_manager.py",
+            "technology": "Python",
+            "description": "Implement the ConfigManager class with initialization and configuration loading methods.",
+            "instructions": "Define a class named `ConfigManager` with an `__init__` method that initializes an empty dictionary called `settings`. Implement a method `load_config` that reads from 'config.json' and stores the settings in the `settings` dictionary. Add a method `parse_environment_variables` that overrides the settings with environment variables. Finally, implement a `get_setting` method that returns a value for a given key from the `settings` dictionary."
+        },
+        {
+            "id": 2,
+            "file": "/cli_interface.py",
+            "technology": "Python",
+            "description": "Implement the CLIInterface class with methods for user interaction.",
+            "instructions": "Define a class named `CLIInterface` with an `__init__` method that accepts a `ConfigManager` instance. Implement `display_prompt` to print a console prompt for user input. Add a `show_help` method to print the application's help message. Implement `handle_exit` to print exit instructions and wait for a keypress."
+        },
+        {
+            "id": 3,
+            "file": "/greeting_manager.py",
+            "technology": "Python",
+            "description": "Implement the GreetingManager class with methods for greeting logic.",
+            "instructions": "Define a class named `GreetingManager` with an `__init__` method that accepts `CLIInterface` and `ConfigManager` instances. Implement `prompt_name` using `CLIInterface` to get the user's name. Add a `generate_greeting` method that creates a personalized greeting using `ConfigManager`. Implement `display_greeting` to show the greeting to the user using `CLIInterface`."
+        },
+        {
+            "id": 4,
+            "file": "/main.py",
+            "technology": "Python",
+            "description": "Implement argument parsing using the argparse library.",
+            "instructions": "Import the `argparse` library and define a function `parse_arguments` that creates an `ArgumentParser` object, defines the expected command-line arguments, and parses them. Include a help flag that triggers the `show_help` method from `CLIInterface`."
+        },
+        {
+            "id": 5,
+            "file": "/main.py",
+            "technology": "Python",
+            "description": "Implement the main application flow.",
+            "instructions": "Define a `main` function that creates instances of `ConfigManager`, `CLIInterface`, and `GreetingManager`. Call `load_config` on `ConfigManager`. Use `parse_arguments` to handle command-line arguments. If help is requested, call `show_help` and exit. Otherwise, use `GreetingManager` to prompt for a name, generate a greeting, and display it. Finally, call `handle_exit` from `CLIInterface`."
+        },
+        {
+            "id": 6,
+            "file": "/main.py",
+            "technology": "Python",
+            "description": "Implement the application exit logic.",
+            "instructions": "Define an `exit_application` function that prints a goodbye message and calls `sys.exit()` to terminate the application."
+        },
+        {
+            "id": 7,
+            "file": "/main.py",
+            "technology": "Python",
+            "description": "Set up the entry point for the application.",
+            "instructions": "At the bottom of the file, add an `if __name__ == '__main__':` block that calls the `main` function to start the application."
+        }
+    ]
+}

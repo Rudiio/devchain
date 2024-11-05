@@ -1,0 +1,16 @@
+{
+    "fixes": [
+        {
+            "id": 1,
+            "file": "/game.py",
+            "technology": "Python",
+            "issue": "Missing method 'get_symbol_at'",
+            "description": "The Game class is missing the 'get_symbol_at' method which is called by the PygameRenderer's 'render' method. This method should retrieve the symbol at a given cell on the board.",
+            "instructions": "Implement the 'get_symbol_at' method in the Game class. This method should take two parameters, 'row' and 'col', and return the symbol at the specified cell on the board. Use the Board class's 'get_cell' method to access the cell and then return the symbol from the cell.",
+            "needed": [
+                "/board.py::Board::get_cell",
+                "/cell.py::Cell::get_symbol"
+            ]
+        }
+    ]
+}

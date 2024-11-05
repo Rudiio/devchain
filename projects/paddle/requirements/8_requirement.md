@@ -1,0 +1,1 @@
+The game's code should be well-documented and maintainable for future updates or enhancements.

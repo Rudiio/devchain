@@ -10,16 +10,16 @@ Team:
         memory_bool : False
         max_memory: 2
       llm:
-        kind : "Azure_openai" # Azure_openai or Huggingface or Ollama
-        model : 'gpt-4' # gpt-4 or gpt4 with Azure openai / Any repo_id with Huggingface
+        kind : "openai" # openai or Huggingface or Ollama
+        model : 'gpt-4o-mini' # gpt-4o-mini or gpt4 with Azure openai / Any repo_id with Huggingface
         temperature : 0.2
     Project_manager:
       memory:
         memory_bool : False
         max_memory : 2
       llm:
-        kind : "Azure_openai"
-        model : "gpt-4"
+        kind : "openai"
+        model : "gpt-4o-mini"
         temperature : 0.2
         
     Software_architect:
@@ -27,8 +27,8 @@ Team:
         memory_bool : False
         max_memory: 2
       llm:
-        kind : "Azure_openai" # Azure_openai or Huggingface
-        model : 'gpt-4' # gpt-4 or gpt4 with Azure openai / Any repo_id with Huggingface
+        kind : "openai" # openai or Huggingface
+        model : 'gpt-4o-mini' # gpt-4o-mini or gpt4 with Azure openai / Any repo_id with Huggingface
         temperature : 0
     
     Tech_lead:
@@ -36,8 +36,8 @@ Team:
         memory_bool : False
         max_memory: 2
       llm:
-        kind : "Azure_openai" # Azure_openai or Huggingface
-        model : 'gpt-4' # gpt-4 or gpt4 with Azure openai / Any repo_id with Huggingface  
+        kind : "openai" # openai or Huggingface
+        model : 'gpt-4o-mini' # gpt-4o-mini or gpt4 with Azure openai / Any repo_id with Huggingface  
         temperature : 0.2
 
     Developer:
@@ -45,8 +45,8 @@ Team:
         memory_bool : False
         max_memory: 2
       llm:
-        kind : "Azure_openai" # Azure_openai or Huggingface
-        model : 'gpt-4' # gpt-4 or gpt4 with Azure openai / Any repo_id with Huggingface
+        kind : "openai" # openai or Huggingface
+        model : 'gpt-4o-mini' # gpt-4o-mini or gpt4 with Azure openai / Any repo_id with Huggingface
         temperature : 0.2
 
     Senior_developer:
@@ -54,14 +54,14 @@ Team:
         memory_bool : False
         max_memory: 2
       llm:
-        kind : "Azure_openai" # Azure_openai or Huggingface
-        model : 'gpt-4' # gpt-4 or gpt4 with Azure openai / Any repo_id with Huggingface
+        kind : "openai" # openai or Huggingface
+        model : 'gpt-4o-mini' # gpt-4o-mini or gpt4 with Azure openai / Any repo_id with Huggingface
         temperature : 0.2
     Tester:
       memory:
         memory_bool : False
         max_memory: 2
       llm:
-        kind : "Azure_openai" # Azure_openai or Huggingface
-        model : 'gpt-4' # gpt-4 or gpt4 with Azure openai / Any repo_id with Huggingface  
+        kind : "openai" # openai or Huggingface
+        model : 'gpt-4o-mini' # gpt-4o-mini or gpt4 with Azure openai / Any repo_id with Huggingface  
         temperature : 0.2
