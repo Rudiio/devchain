@@ -9,7 +9,7 @@ on:
       - main
       - dev
 jobs:
-  ci: 
+  lint: 
     runs-on : ubuntu-latest
     steps:
       - name: Checkout repository
@@ -24,4 +24,20 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Linter with Ruff
-        run: ruff check devchain 
+        run: ruff check --output-format=github devchain
+  format: 
+    runs-on : ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies 
+        run: pip install -r requirements.txt
+
+      - name: format with Ruff
+        run: ruff format devchain 
