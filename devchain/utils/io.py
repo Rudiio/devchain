@@ -22,7 +22,7 @@ async def ask_user_request()-> str:
                              choices=examples,
                              qmark='==>',
                              ).ask_async()
-    return response
+        return response
 
 def ask_user_question(question:str)->str:
     """Ask the user a question"""
